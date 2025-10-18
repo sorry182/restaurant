@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pho Ngon - Vietnamese Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        .navbar {
+            background-color: #2c3e50;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+        }
+
+        .nav-links a:hover {
+            background-color: #34495e;
+            border-radius: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-download {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-download .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            background-color: #e74c3c;
+        }
+
+        .menu-download .btn:hover {
+            background-color: #c0392b;
+        }
+
+        .menu h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-category {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .menu-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 0.5rem;
+        }
+
+        .menu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Location Section */
+        .location {
+            background-color: #f8f9fa;
+            padding: 4rem 1rem;
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #2c3e50;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Pho Ngon</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="pho-ngon.pdf" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-pdf"></i> Menu PDF
+                </a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Pho Ngon</h1>
+            <p>Experience authentic Vietnamese cuisine in the heart of Edmonton</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-download">
+            <a href="pho-ngon.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf"></i> Download Full Menu PDF
+            </a>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3>Appetizers - Khai Vị</h3>
+                <div class="menu-item">
+                    <h4>A1. Spring Rolls - Chả Giò</h4>
+                    <p>Deep fried spring rolls with pork and vegetables (4 rolls)</p>
+                    <span class="price">$8.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>A2. Salad Rolls - Gỏi Cuốn</h4>
+                    <p>Rice paper rolls with shrimp, pork and vegetables (2 rolls)</p>
+                    <span class="price">$7.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>A3. Grilled Chicken Wings</h4>
+                    <p>Fish sauce marinated wings (8 pcs)</p>
+                    <span class="price">$15.95</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Phở - Beef Noodle Soup</h3>
+                <div class="menu-item">
+                    <h4>P1. Phở Đặc Biệt</h4>
+                    <p>Special Combo: Rare beef, well-done beef, beef balls, tendon, tripe</p>
+                    <span class="price">$16.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>P2. Phở Tái</h4>
+                    <p>Rare beef slices</p>
+                    <span class="price">$15.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>P3. Phở Gà</h4>
+                    <p>Chicken breast</p>
+                    <span class="price">$15.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>P4. Phở Chay</h4>
+                    <p>Vegetarian pho with tofu and vegetables</p>
+                    <span class="price">$15.95</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Vermicelli Bowls - Bún</h3>
+                <div class="menu-item">
+                    <h4>B1. Bún Thịt Nướng</h4>
+                    <p>Grilled pork with spring roll</p>
+                    <span class="price">$16.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>B2. Bún Gà Nướng</h4>
+                    <p>Grilled lemongrass chicken with spring roll</p>
+                    <span class="price">$16.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>B3. Bún Chả Giò</h4>
+                    <p>Spring rolls only</p>
+                    <span class="price">$15.95</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Rice Plates - Cơm</h3>
+                <div class="menu-item">
+                    <h4>C1. Cơm Sườn Nướng</h4>
+                    <p>Grilled pork chop with rice</p>
+                    <span class="price">$16.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>C2. Cơm Gà Nướng</h4>
+                    <p>Grilled lemongrass chicken with rice</p>
+                    <span class="price">$16.95</span>
+                </div>
+                <div class="menu-item">
+                    <h4>C3. Cơm Bò Lúc Lắc</h4>
+                    <p>Shaking beef with rice</p>
+                    <span class="price">$18.95</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Beverages - Giải Khát</h3>
+                <div class="menu-item">
+                    <h4>Vietnamese Coffee - Cà Phê Sữa Đá</h4>
+                    <p>Iced coffee with condensed milk</p>
+                    <span class="price">$5.50</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Thai Iced Tea</h4>
+                    <p>Sweet and creamy Thai tea</p>
+                    <span class="price">$5.50</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Fresh Coconut</h4>
+                    <p>Young coconut juice</p>
+                    <span class="price">$5.95</span>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Extras</h3>
+                <div class="menu-item">
+                    <h4>Extra Noodles</h4>
+                    <span class="price">$3.00</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Extra Meat</h4>
+                    <span class="price">$4.00</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Extra Vegetables</h4>
+                    <span class="price">$2.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="location-container">
+            <div class="address-info">
+                <h2>Find Us</h2>
+                <p>9132 23 Ave NW,</p>
+                <p>Edmonton, AB T6N 1H9</p>
+                <p>Phone: (780) 435-0008</p>
+            </div>
+            <div class="hours-info">
+                <h2>Hours</h2>
+                <ul class="hours-list">
+                    <li>Monday: 9 a.m.–8:30 p.m.</li>
+                    <li>Tuesday: 9 a.m.–8:30 p.m.</li>
+                    <li>Wednesday: 9 a.m.–8:30 p.m.</li>
+                    <li>Thursday: 9 a.m.–8:30 p.m.</li>
+                    <li>Friday: 9 a.m.–8:30 p.m.</li>
+                    <li>Saturday: 11 a.m.–8:30 p.m.</li>
+                    <li>Sunday: 12–7 p.m.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="footer-year"></span> Pho Ngon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set footer year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            var yearSpan = document.getElementById('footer-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
