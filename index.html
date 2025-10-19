@@ -324,6 +324,28 @@
                 <p>Edmonton, AB T6N 1H9</p>
                 <p>Phone: (780) 435-0008</p>
             </div>
+            <div class="map-info">
+                <h2>Map</h2>
+                <!-- Simple embed (no API key required). This will display an interactive Google Maps iframe centered on the address. -->
+                <div class="map-embed">
+                    <iframe
+                        title="Pho Ngon location"
+                            src="https://www.google.com/maps?q=9132+23+Ave+NW+Edmonton+AB+T6N+1H9&z=14&output=embed"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <!-- Optional: JS-driven map. To enable replace the comment below with a Maps JS API script tag including your API key, and un-hide the #js-map div. See script.js for init code. -->
+                <div id="js-map" class="js-map" aria-hidden="true"></div>
+                <div class="map-actions">
+                    <a class="btn btn-outline" href="https://www.google.com/maps/place/9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                    <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer">Get directions</a>
+                </div>
+            </div>
             <div class="hours-info">
                 <h2>Hours</h2>
                 <ul class="hours-list">

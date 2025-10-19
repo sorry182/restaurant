@@ -274,3 +274,51 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style); 
+
+/* ------------------------------------------------------------------
+   Optional Google Maps JavaScript API initializer
+   - By default the page uses an iframe embed (no API key required).
+   - To use the JS API (for custom marker, controls, styling):
+     1) Obtain an API key from Google Cloud and enable Maps JavaScript API.
+     2) Add a script tag to your HTML right before the closing </body>:
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+     3) Remove the aria-hidden and set the #js-map element to display:block (or the initMap will do it).
+   - The function below will be called automatically by the Maps JS API via the callback parameter.
+------------------------------------------------------------------ */
+
+function initMap() {
+    try {
+        // coordinates for 9132 23 Ave NW, Edmonton (approximate)
+        const position = { lat: 53.486, lng: -113.545 };
+
+        // show the JS map container and hide the iframe embed (so only one map displays)
+        const jsMap = document.getElementById('js-map');
+        if (jsMap) {
+            jsMap.style.display = 'block';
+            jsMap.setAttribute('aria-hidden', 'false');
+        }
+
+        const embed = document.querySelector('.map-embed');
+        if (embed) {
+            embed.style.display = 'none';
+        }
+
+        // Create the map (slightly zoomed out)
+        const map = new google.maps.Map(jsMap || document.createElement('div'), {
+            center: position,
+            zoom: 14,
+            disableDefaultUI: false,
+        });
+
+        // Add a marker
+        new google.maps.Marker({
+            position,
+            map,
+            title: 'Pho Ngon',
+        });
+    } catch (e) {
+        // If google is not defined or init fails, do nothing (iframe still works)
+        // eslint-disable-next-line no-console
+        console.warn('Google Maps JS API initMap error:', e);
+    }
+}
