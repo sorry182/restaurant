@@ -189,26 +189,55 @@ body {
     border-radius: 6px;
     display: none; /* hidden by default; enable when using Maps JS API */
 }
+/* Map action/button base styles are consolidated later in this file */
 
+/* Map action buttons: center and make each 50% width on wider screens */
 .map-actions {
-    margin-top: 0.75rem;
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    justify-content: center; /* center the group */
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
 }
 
+.map-actions .btn {
+    /* Make buttons visually equal width: allow flex shrink/grow and remove intrinsic min-width limits */
+    flex: 1 1 0; /* distribute available space equally */
+    min-width: 0; /* allow the button to shrink below its content's intrinsic width */
+    max-width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.6rem 0.75rem;
+    display: block; /* ensure anchors fill their flex item area */
+}
+
+/* Outline variant for map buttons */
 .btn.btn-outline {
-    background: transparent;
+    background-color: #ffffff;
     color: #2c3e50;
     border: 1px solid #2c3e50;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
     text-decoration: none;
+    display: inline-block;
 }
 
 .btn.btn-outline:hover {
-    background: #2c3e50;
-    color: #fff;
+    background-color: #f4f6f7;
+}
+
+/* Stack buttons on small screens / narrow tablets */
+@media (max-width: 600px) {
+    .map-actions {
+        flex-direction: column;
+        gap: 0.5rem; /* slightly tighter gap when stacked */
+        align-items: stretch; /* make children full-width when stacked */
+    }
+
+    .map-actions .btn {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 0.75rem 1rem; /* slightly increased tappable area for touch */
+    }
 }
 
 .location h2,
@@ -274,6 +303,22 @@ body {
 
 .btn:hover {
     background-color: #34495e;
+}
+
+/* Button icon and focus styles */
+.btn .btn-icon {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    fill: currentColor; /* inherits color from parent */
+    display: inline-block;
+}
+
+/* Visible focus for keyboard users */
+.btn:focus-visible {
+    outline: 3px solid rgba(44, 62, 80, 0.25);
+    outline-offset: 2px;
 }
 
 /* Footer */

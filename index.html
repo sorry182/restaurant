@@ -1,284 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header and Navigation */
-        .navbar {
-            background-color: #2c3e50;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-        }
-
-        .nav-logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-        }
-
-        .nav-links a:hover {
-            background-color: #34495e;
-            border-radius: 4px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1920');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 60px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Menu Section */
-        .menu {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .menu-download {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .menu-download .btn {
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-            background-color: #e74c3c;
-        }
-
-        .menu-download .btn:hover {
-            background-color: #c0392b;
-        }
-
-        .menu h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .menu-category {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .menu-category h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 0.5rem;
-        }
-
-        .menu-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .menu-item h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-item p {
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .price {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* Location Section */
-        .location {
-            background-color: #f8f9fa;
-            padding: 4rem 1rem;
-        }
-
-        .location-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .hours-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .hours-list li {
-            margin-bottom: 0.5rem;
-            display: table;
-            width: 100%;
-            table-layout: fixed; /* makes column widths predictable */
-            white-space: nowrap; /* keep time on one line */
-        }
-
-        .hours-list .day {
-            display: table-cell;
-            width: 120px; /* fixed width for the day column */
-            font-weight: bold;
-            text-align: right;
-            padding-right: 12px;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-
-        .hours-list .start {
-            display: table-cell;
-            width: 80px; /* increased width for the start time */
-            text-align: right; /* right-align so last digit lines up */
-            vertical-align: middle;
-            padding-left: 6px;
-            padding-right: 12px; /* ensure space between start and separator */
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Courier New", monospace;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .hours-list .sep {
-            display: table-cell;
-            width: 36px; /* slightly wider sep column to avoid overlap */
-            text-align: center; /* center the dash */
-            vertical-align: middle;
-            padding-left: 8px; /* push the dash away from the start */
-            padding-right: 4px;
-            color: #666;
-        }
-
-        .hours-list .end {
-            display: table-cell;
-            color: #666;
-            vertical-align: middle;
-            padding-left: 6px; /* separate end time from separator */
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            background-color: #2c3e50;
-            color: white;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #34495e;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                margin-top: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pho Ngon</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -342,8 +68,20 @@
                 <!-- Optional: JS-driven map. To enable replace the comment below with a Maps JS API script tag including your API key, and un-hide the #js-map div. See script.js for init code. -->
                 <div id="js-map" class="js-map" aria-hidden="true"></div>
                 <div class="map-actions">
-                    <a class="btn btn-outline" href="https://www.google.com/maps/place/9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                    <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer">Get directions</a>
+                    <a class="btn btn-outline" href="https://www.google.com/maps/place/9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+                        <!-- map pin icon -->
+                        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+                        </svg>
+                        Google Maps
+                    </a>
+                    <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=9132+23+Ave+NW,+Edmonton,+AB+T6N+1H9" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Pho Ngon">
+                        <!-- directions arrow icon -->
+                        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 2L3 20h18L12 2zm0 3.84L17.53 18H6.47L12 5.84zM11 10v4h2v-4h-2z" />
+                        </svg>
+                        Get directions
+                    </a>
                 </div>
             </div>
             <div class="hours-info">
