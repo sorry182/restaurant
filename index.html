@@ -158,10 +158,57 @@
 
         .hours-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .hours-list li {
             margin-bottom: 0.5rem;
+            display: table;
+            width: 100%;
+            table-layout: fixed; /* makes column widths predictable */
+            white-space: nowrap; /* keep time on one line */
+        }
+
+        .hours-list .day {
+            display: table-cell;
+            width: 120px; /* fixed width for the day column */
+            font-weight: bold;
+            text-align: right;
+            padding-right: 12px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .hours-list .start {
+            display: table-cell;
+            width: 80px; /* increased width for the start time */
+            text-align: right; /* right-align so last digit lines up */
+            vertical-align: middle;
+            padding-left: 6px;
+            padding-right: 12px; /* ensure space between start and separator */
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Courier New", monospace;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .hours-list .sep {
+            display: table-cell;
+            width: 36px; /* slightly wider sep column to avoid overlap */
+            text-align: center; /* center the dash */
+            vertical-align: middle;
+            padding-left: 8px; /* push the dash away from the start */
+            padding-right: 4px;
+            color: #666;
+        }
+
+        .hours-list .end {
+            display: table-cell;
+            color: #666;
+            vertical-align: middle;
+            padding-left: 6px; /* separate end time from separator */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         /* Contact Section */
@@ -280,13 +327,48 @@
             <div class="hours-info">
                 <h2>Hours</h2>
                 <ul class="hours-list">
-                    <li>Monday: 9 a.m.–8:30 p.m.</li>
-                    <li>Tuesday: 9 a.m.–8:30 p.m.</li>
-                    <li>Wednesday: 9 a.m.–8:30 p.m.</li>
-                    <li>Thursday: 9 a.m.–8:30 p.m.</li>
-                    <li>Friday: 9 a.m.–8:30 p.m.</li>
-                    <li>Saturday: 11 a.m.–8:30 p.m.</li>
-                    <li>Sunday: 12–7 p.m.</li>
+                    <li>
+                        <span class="day">Monday:</span>
+                        <span class="start">9:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Tuesday:</span>
+                        <span class="start">9:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Wednesday:</span>
+                        <span class="start">9:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Thursday:</span>
+                        <span class="start">9:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Friday:</span>
+                        <span class="start">9:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday:</span>
+                        <span class="start">11:00 a.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">8:30 p.m.</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday:</span>
+                        <span class="start">12:00 p.m.</span>
+                        <span class="sep">–</span>
+                        <span class="end">7:00 p.m.</span>
+                    </li>
                 </ul>
             </div>
         </div>
