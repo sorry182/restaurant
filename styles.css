@@ -246,12 +246,73 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Hours list: align columns using table layout so times line up */
 .hours-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .hours-list li {
     margin-bottom: 0.5rem;
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* makes column widths predictable */
+    white-space: nowrap; /* keep time on one line */
+}
+
+.hours-list .day {
+    display: table-cell;
+    width: 120px; /* fixed width for the day column */
+    font-weight: bold;
+    text-align: right;
+    padding-right: 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.hours-list .start {
+    display: table-cell;
+    width: 80px; /* increased width for the start time */
+    text-align: right; /* right-align so last digit lines up */
+    vertical-align: middle;
+    padding-left: 6px;
+    padding-right: 12px; /* ensure space between start and separator */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Courier New", monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+.hours-list .sep {
+    display: table-cell;
+    width: 36px; /* slightly wider sep column to avoid overlap */
+    text-align: center; /* center the dash */
+    vertical-align: middle;
+    padding-left: 8px; /* push the dash away from the start */
+    padding-right: 4px;
+    color: #666;
+}
+
+.hours-list .end {
+    display: table-cell;
+    color: #666;
+    vertical-align: middle;
+    padding-left: 6px; /* separate end time from separator */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Utility: visually hidden but accessible text */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 /* Contact Section */
